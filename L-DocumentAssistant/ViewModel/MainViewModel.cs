@@ -53,6 +53,10 @@ namespace L_DocumentAssistant.ViewModel
 
                     WelcomeTitle = item.Title;
                 });
+            Folder folder = new Folder(@"D:\Download\Compress");
+            System.Windows.MessageBox.Show(folder.ToString());
+            Document document = new Document(@"D:\Download\Compress\DirectX_Repair_3.2.7z");
+            System.Windows.MessageBox.Show(document.ToString());
         }
 
         ////public override void Cleanup()
