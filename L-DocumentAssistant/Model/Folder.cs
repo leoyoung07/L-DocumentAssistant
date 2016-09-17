@@ -31,22 +31,60 @@ namespace L_DocumentAssistant.Model
                 if(folders == null)
                 {
                     folders = new ObservableCollection<Folder>();
-                    foreach (var folder in Directory.GetDirectories(FullPath))
+                    try
                     {
-                        folders.Add(new Folder(FullPath));
+                        foreach (var folder in Directory.GetDirectories(FullPath))
+                        {
+                            folders.Add(new Folder(folder));
+                        }
                     }
+                    catch (Exception)
+                    {
+
+                    }
+
                 }
                 return folders;
+            }
+        }
+
+        private ObservableCollection<FileBase> files = null;
+
+        public ObservableCollection<FileBase> Files
+        {
+            get
+            {
+                if(files == null)
+                {
+                    files = new ObservableCollection<FileBase>();
+                    foreach (var folder in Folders)
+                    {
+                        files.Add(folder);
+                    }
+                    foreach (var document in Documents)
+                    {
+                        files.Add(document);
+                    }
+                }
+                return files;
             }
         }
 
         public Folder(string path) : base(path)
         {
             documents = new ObservableCollection<Document>();
-            foreach (var file in Directory.GetFiles(path))
+            try
             {
-                documents.Add(new Document(file));
+                foreach (var file in Directory.GetFiles(path))
+                {
+                    documents.Add(new Document(file));
+                }
             }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         protected override DateTime getLastModifiedTime()

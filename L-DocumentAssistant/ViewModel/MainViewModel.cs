@@ -36,27 +36,27 @@ namespace L_DocumentAssistant.ViewModel
             }
         }
 
+        private Folder root;
+
+        public Folder Root
+        {
+            get
+            {
+                return root;
+            }
+            set
+            {
+                Set(ref root, value);
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
         public MainViewModel(IDataService dataService)
         {
             _dataService = dataService;
-            _dataService.GetData(
-                (item, error) =>
-                {
-                    if (error != null)
-                    {
-                        // Report error here
-                        return;
-                    }
-
-                    WelcomeTitle = item.Title;
-                });
-            Folder folder = new Folder(@"D:\Download\Compress");
-            System.Windows.MessageBox.Show(folder.ToString());
-            Document document = new Document(@"D:\Download\Compress\DirectX_Repair_3.2.7z");
-            System.Windows.MessageBox.Show(document.ToString());
+            Root = new Folder(@"D:\");
         }
 
         ////public override void Cleanup()

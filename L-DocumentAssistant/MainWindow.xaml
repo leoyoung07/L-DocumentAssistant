@@ -20,13 +20,9 @@
 
     <Grid x:Name="LayoutRoot">
 
-        <TextBlock FontSize="36"
-                   FontWeight="Bold"
-                   Foreground="Purple"
-                   Text="{Binding WelcomeTitle}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   TextWrapping="Wrap" />
+        <TreeView ItemsSource="{Binding Root.Folders}" ItemTemplate="{StaticResource itemTemplate}">
+            
+        </TreeView>
 
     </Grid>
 </Window>
