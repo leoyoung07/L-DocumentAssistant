@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:m="clr-namespace:L_DocumentAssistant.Model"
                     >
-    <HierarchicalDataTemplate x:Key="itemTemplate" DataType="m:Folder" ItemsSource="{Binding Files}">
+    <HierarchicalDataTemplate x:Key="itemTemplate" DataType="m:Folder" ItemsSource="{Binding AllContents}">
         <TextBlock Text="{Binding Name}"></TextBlock>
     </HierarchicalDataTemplate>
 </ResourceDictionary>

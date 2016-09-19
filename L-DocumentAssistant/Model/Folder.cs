@@ -48,25 +48,25 @@ namespace L_DocumentAssistant.Model
             }
         }
 
-        private ObservableCollection<FileBase> files = null;
+        private ObservableCollection<FileBase> allContents = null;
 
-        public ObservableCollection<FileBase> Files
+        public ObservableCollection<FileBase> AllContents
         {
             get
             {
-                if(files == null)
+                if(allContents == null)
                 {
-                    files = new ObservableCollection<FileBase>();
+                    allContents = new ObservableCollection<FileBase>();
                     foreach (var folder in Folders)
                     {
-                        files.Add(folder);
+                        allContents.Add(folder);
                     }
                     foreach (var document in Documents)
                     {
-                        files.Add(document);
+                        allContents.Add(document);
                     }
                 }
-                return files;
+                return allContents;
             }
         }
 

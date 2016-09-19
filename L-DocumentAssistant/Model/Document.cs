@@ -20,10 +20,21 @@ namespace L_DocumentAssistant.Model
             }
         }
 
+        private string extension;
+
+        public string Extension
+        {
+            get
+            {
+                return extension;
+            }
+        }
+
         public Document(string path):base(path)
         {
             FileInfo fileInfo = new FileInfo(path);
             size = fileInfo.Length;
+            extension = fileInfo.Extension;
         }
 
         protected override DateTime getCreateTime()
@@ -43,7 +54,7 @@ namespace L_DocumentAssistant.Model
 
         protected override string getName()
         {
-            return Path.GetFileNameWithoutExtension(FullPath);
+            return Path.GetFileName(FullPath);
         }
 
         protected override Constant.FileType getType()
