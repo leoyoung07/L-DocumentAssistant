@@ -86,6 +86,8 @@
     <Compile Include="Model\FileBase.cs" />
     <Compile Include="Model\Folder.cs" />
     <Compile Include="Model\IDataService.cs" />
+    <Compile Include="Service\DocumentService.cs" />
+    <Compile Include="Service\IDocumentService.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
@@ -136,9 +138,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Service\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

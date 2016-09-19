@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using L_DocumentAssistant.Model;
+using L_DocumentAssistant.Service;
 
 namespace L_DocumentAssistant.ViewModel
 {
@@ -11,7 +12,7 @@ namespace L_DocumentAssistant.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        private readonly IDataService _dataService;
+        private readonly IDocumentService documentService;
 
         /// <summary>
         /// The <see cref="WelcomeTitle" /> property's name.
@@ -53,9 +54,9 @@ namespace L_DocumentAssistant.ViewModel
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
-        public MainViewModel(IDataService dataService)
+        public MainViewModel(IDocumentService documentService)
         {
-            _dataService = dataService;
+            this.documentService = documentService;
             Root = new Folder(@"D:\");
         }
 

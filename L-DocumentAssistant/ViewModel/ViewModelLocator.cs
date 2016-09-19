@@ -13,6 +13,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using L_DocumentAssistant.Model;
+using L_DocumentAssistant.Service;
 
 namespace L_DocumentAssistant.ViewModel
 {
@@ -29,7 +30,7 @@ namespace L_DocumentAssistant.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            SimpleIoc.Default.Register<IDataService, DataService>();
+            SimpleIoc.Default.Register<IDocumentService, DocumentService>();
 
             SimpleIoc.Default.Register<MainViewModel>();
         }
